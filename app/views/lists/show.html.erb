@@ -19,6 +19,6 @@
     <% end %>
   </div>
 </div>
-<% @list.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
