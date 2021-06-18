@@ -20,6 +20,11 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def destroy
+    @list.destroy
+    redirect_to lists_path
+  end
+
   private
 
   def list_params

@@ -1,22 +1,32 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://pbs.twimg.com/media/DmBaHWzUYAA4sIS.jpg);">
+<div class="banner">
   <div class="container">
     <h1>What's your favorite <strong>movie?</strong></h1>
-    <p>🎞 🎫 🎬 📽 🍿</p>
-    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
+    <strong><p>🎞 🎫 🎬 📽 🍿</p></strong>
+    <%= link_to 'Create a movie list', new_list_path, class: "btn btn-gradient" %>
   </div>
 </div>
 
-<h1>Movie list</h1>
-
-
-
-<div class="cards">
-  <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key, height: 300, crop: :fill) : ""; %>')">
-    <%= link_to list.name, list_path(list) %>
-  </div>
-  <% end %>
+<div class="carousel">
+  <ul class="carousel-area">
+    <li class="carousel-list"><img class="carousel-img" src="/assets/image1.jpeg" alt="ハムスターの画像"></li>
+    <li class="carousel-list"><img class="carousel-img" src="/assets/image2.jpg" alt="羊の画像"></li>
+    <li class="carousel-list"><img class="carousel-img" src="/assets/image3.jpg" alt="亀の画像"></li>
+    <li class="carousel-list"><img class="carousel-img" src="/assets/image4.jpg" alt="鳥の画像"></li>
+  </ul>
 </div>
 
+<h3>Movie list</h3>
+
+    <!-- Slides -->
+    <div class="countainer-2">
+      <div class="cards">
+        <% @lists.each do |list| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? cl_image_path(list.photo.key, height: 300, crop: :fill) : ""; %>')">
+            <h2><%= link_to list.name, list_path(list) %></h2>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>
 
 <%#= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
