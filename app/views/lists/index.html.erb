@@ -5,9 +5,11 @@
     <%= link_to list_path(list) do %>
       <div class="card-category">
         <img src="<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path("https://que-akitsu.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png") %>">
+          <h3><%= list.name %></h3>
       </div>
     <% end %>
   <% end %>
 </div>
 
 <%#= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
