@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
+<!--       <div class="bg-white rounded p-3 shadow">
         <h3>Add a movie to your <%= @list.name %> list</h3>
         <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.input :comment, placeholder: 'Enter a comment about the movie' %>
@@ -9,8 +9,20 @@
           <%= f.submit class: 'btn btn-flat' %>
 
         <% end %>
-      </div>
+      </div> -->
+
     </div>
   </div>
+</div>
+
+<form id="search-movies" class="form-inline">
+  <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
+  <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
+</form>
+
+
+<div class="container text-center">
+  <ul id="results" class="list-inline"></ul>
+  aaa
 </div>
 
